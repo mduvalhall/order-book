@@ -1,26 +1,25 @@
-use std::{cmp::Reverse, collections::BinaryHeap};
-
-use crate::{level::Level, order::Order, order_id::OrderId, trade::Trade};
+use crate::{asks::Asks, bids::Bids, level::Level, order::Order, order_id::OrderId, trade::Trade};
 
 #[derive(Debug)]
 pub struct OrderBook {
     id_count: OrderId,
-    bids: BinaryHeap<Level>,
-    asks: BinaryHeap<Reverse<Level>>,
+    bids: Bids,
+    asks: Asks,
 }
 
 impl OrderBook {
     pub fn new() -> Self {
         Self {
             id_count: OrderId::new(0),
-            bids: BinaryHeap::new(),
-            asks: BinaryHeap::new(),
+            bids: Bids::new(),
+            asks: Asks::new(),
         }
     }
 
     pub fn add_ask(&mut self, price: u32, quantity: u32) -> Trade {
         let id = self.new_order_id();
         let trade = Trade::new(id);
+
         todo!()
     }
 

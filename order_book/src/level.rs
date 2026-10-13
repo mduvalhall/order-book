@@ -4,7 +4,7 @@ use crate::order::Order;
 
 #[derive(Debug)]
 pub struct Level {
-    price: u32,
+    pub price: u32,
     orders: VecDeque<Order>,
 }
 
