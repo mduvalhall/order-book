@@ -44,3 +44,23 @@ impl Ord for Level {
         self.price.cmp(&other.price)
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::cmp::Reverse;
+
+    #[test]
+    fn ordering_is_correct() {
+        let level_a = Level::new(10);
+        let level_b = Level::new(20);
+        assert!((level_a < level_b) == true);
+    }
+
+    #[test]
+    fn reverse_ordering_is_correct() {
+        let level_a = Reverse(Level::new(10));
+        let level_b = Reverse(Level::new(20));
+        assert!((level_b < level_a) == true);
+    }
+}

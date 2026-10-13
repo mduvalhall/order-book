@@ -1,12 +1,12 @@
-use crate::order::Order;
+use crate::{order::Order, order_id::OrderId};
 
 pub struct Trade {
-    id: u32,
+    id: OrderId,
     trades: Vec<Order>,
 }
 
 impl Trade {
-    pub fn new(id: u32) -> Self {
+    pub fn new(id: OrderId) -> Self {
         Self {
             id,
             trades: Vec::new(),
