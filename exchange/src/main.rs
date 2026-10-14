@@ -1,6 +1,6 @@
-use order_book::OrderBook;
+use order_book::Book;
 
 fn main() {
-    let ob = OrderBook::new();
-    println!("{ob:#?}");
+    let book = Book::new();
+    println!("{book:#?}");
 }
