@@ -3,12 +3,5 @@
 version = 4
 
 [[package]]
-name = "exchange"
-version = "0.1.0"
-dependencies = [
- "order_book",
-]
-
-[[package]]
 name = "order_book"
 version = "0.1.0"
